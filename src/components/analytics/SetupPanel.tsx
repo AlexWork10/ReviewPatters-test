@@ -93,6 +93,11 @@ export function SetupPanel({ onStartAnalysis }: SetupPanelProps) {
                   placeholder={`Competitor ${index + 1} (e.g., Slack, Notion)`}
                   value={competitor}
                   onChange={(e) => updateCompetitor(index, e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && competitor.trim() && competitors.length < 5) {
+                      addCompetitor();
+                    }
+                  }}
                   className="flex-1"
                 />
                 {competitors.length > 1 && (
@@ -146,7 +151,6 @@ export function SetupPanel({ onStartAnalysis }: SetupPanelProps) {
                 />
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg">{source.icon}</span>
                     <label
                       htmlFor={source.id}
                       className="font-medium cursor-pointer"
@@ -166,20 +170,20 @@ export function SetupPanel({ onStartAnalysis }: SetupPanelProps) {
 
       {/* Analysis Summary */}
       <Card className="analytics-card">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div>
             <h3 className="font-semibold mb-2">Analysis Summary</h3>
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-4 lg:gap-6 text-sm text-muted-foreground">
               <span>{competitors.filter(c => c.trim()).length} competitors selected</span>
               <span>{selectedSources.length} sources selected</span>
-              <span>~{competitors.filter(c => c.trim()).length * selectedSources.length * 150} reviews to analyze</span>
+              <span className="hidden sm:inline">~{competitors.filter(c => c.trim()).length * selectedSources.length * 150} reviews to analyze</span>
             </div>
           </div>
           <Button
             size="lg"
             disabled={!isValid}
             onClick={handleSubmit}
-            className="gradient-primary px-8"
+            className="gradient-primary px-8 w-full lg:w-auto"
           >
             <Zap className="w-4 h-4 mr-2" />
             Start Analysis
