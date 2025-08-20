@@ -47,7 +47,7 @@ export function AnalyticsDashboard() {
                 <span className="text-primary-foreground font-bold text-sm">RP</span>
               </div>
               <div className="text-left">
-                <h1 className="text-xl font-semibold">Review Patterns Analytics</h1>
+                <h1 className="text-xl font-semibold">ReviewPatterns Analytics</h1>
                 <p className="text-sm text-muted-foreground">Competitor Review Analysis Platform</p>
               </div>
             </button>

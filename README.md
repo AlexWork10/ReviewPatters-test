@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# ReviewPatterns Analytics
 
-## Project info
+## Descripción del Proyecto
 
-**URL**: https://lovable.dev/projects/0cc87080-9751-49d0-925d-324ca21def38
+ReviewPatterns Analytics es una plataforma profesional de análisis de reseñas de competidores. Descubre insights, puntos de dolor y oportunidades estratégicas a partir del feedback de competidores en múltiples plataformas.
 
-## How can I edit this code?
+## Características
 
-There are several ways of editing your application.
+- **Análisis de Sentimiento**: Análisis avanzado de sentimientos en reseñas de competidores
+- **Mapa de Calor de Puntos de Dolor**: Visualización interactiva de problemas identificados
+- **Dashboard Analítico**: Panel completo con métricas y KPIs
+- **Análisis de Experiencia Móvil**: Insights específicos para aplicaciones móviles
+- **Oportunidades de Innovación**: Identificación de áreas de mejora y oportunidades
+- **Tabla de Peores Reseñas**: Análisis detallado de feedback negativo
 
-**Use Lovable**
+## Tecnologías Utilizadas
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0cc87080-9751-49d0-925d-324ca21def38) and start prompting.
+Este proyecto está construido con:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Vite** - Build tool y dev server
+- **TypeScript** - Tipado estático
+- **React** - Framework de UI
+- **shadcn/ui** - Componentes de UI modernos
+- **Tailwind CSS** - Framework de CSS utility-first
+- **React Router** - Enrutamiento
+- **Recharts** - Gráficos y visualizaciones
+- **React Hook Form** - Manejo de formularios
+- **Zod** - Validación de esquemas
 
-**Use your preferred IDE**
+## Instalación y Desarrollo
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerrequisitos
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (versión 18 o superior)
+- npm o yarn
 
-Follow these steps:
+### Pasos de Instalación
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Paso 1: Clonar el repositorio
+git clone <URL_DEL_REPOSITORIO>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Paso 2: Navegar al directorio del proyecto
+cd ReviewPatterns-demo
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Paso 3: Instalar dependencias
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Paso 4: Iniciar el servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+El servidor de desarrollo se ejecutará en `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Scripts Disponibles
 
-**Use GitHub Codespaces**
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm run build:dev` - Construye la aplicación en modo desarrollo
+- `npm run lint` - Ejecuta el linter
+- `npm run preview` - Previsualiza la build de producción
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Estructura del Proyecto
 
-## What technologies are used for this project?
+```
+src/
+├── components/
+│   ├── analytics/     # Componentes específicos de análisis
+│   └── ui/           # Componentes de UI reutilizables
+├── hooks/            # Custom hooks
+├── lib/              # Utilidades y configuraciones
+├── pages/            # Páginas de la aplicación
+└── main.tsx          # Punto de entrada
+```
 
-This project is built with:
+## Despliegue
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Para desplegar la aplicación:
 
-## How can I deploy this project?
+```sh
+# Construir para producción
+npm run build
 
-Simply open [Lovable](https://lovable.dev/projects/0cc87080-9751-49d0-925d-324ca21def38) and click on Share -> Publish.
+# Los archivos de producción estarán en la carpeta dist/
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Contribución
 
-Yes, you can!
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Licencia
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
