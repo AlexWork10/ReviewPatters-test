@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -20,12 +20,22 @@ const availableSources = [
 export function SetupPanel({ onStartAnalysis }: SetupPanelProps) {
   const [competitors, setCompetitors] = useState<string[]>(['']);
   const [selectedSources, setSelectedSources] = useState<string[]>(['g2', 'trustpilot']);
+  const [shouldFocusLast, setShouldFocusLast] = useState(false);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const addCompetitor = () => {
     if (competitors.length < 5) {
       setCompetitors([...competitors, '']);
+      setShouldFocusLast(true);
     }
   };
+
+  useEffect(() => {
+    if (shouldFocusLast && inputRefs.current[competitors.length - 1]) {
+      inputRefs.current[competitors.length - 1]?.focus();
+      setShouldFocusLast(false);
+    }
+  }, [competitors.length, shouldFocusLast]);
 
   const removeCompetitor = (index: number) => {
     if (competitors.length > 1) {
@@ -90,6 +100,7 @@ export function SetupPanel({ onStartAnalysis }: SetupPanelProps) {
             {competitors.map((competitor, index) => (
               <div key={index} className="flex gap-2">
                 <Input
+                  ref={(el) => (inputRefs.current[index] = el)}
                   placeholder={`Competitor ${index + 1} (e.g., Slack, Notion)`}
                   value={competitor}
                   onChange={(e) => updateCompetitor(index, e.target.value)}
