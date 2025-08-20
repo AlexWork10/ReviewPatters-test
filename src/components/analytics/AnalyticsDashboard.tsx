@@ -43,11 +43,12 @@ export function AnalyticsDashboard() {
               onClick={handleReset}
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">RP</span>
-              </div>
+              <img 
+                src="/logoReviewPatterns.png" 
+                alt="ReviewPatterns Analytics Logo" 
+                className="h-32 w-auto -my-8"
+              />
               <div className="text-left">
-                <h1 className="text-xl font-semibold">ReviewPatterns Analytics</h1>
                 <p className="text-sm text-muted-foreground">Competitor Review Analysis Platform</p>
               </div>
             </button>
