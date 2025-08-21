@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Card } from '@/components/ui/card';
-import { Plus, X, Target, Database, Zap } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Plus, X, Target, Database, Zap, AlertTriangle } from 'lucide-react';
 
 interface SetupPanelProps {
   onStartAnalysis: (competitors: string[], sources: string[]) => void;
@@ -134,6 +135,13 @@ export function SetupPanel({ onStartAnalysis }: SetupPanelProps) {
                 Add Competitor
               </Button>
             )}
+
+            <Alert className="bg-yellow-50 border-yellow-200 text-yellow-800">
+              <AlertTriangle className="w-4 h-4 text-yellow-600" />
+              <AlertDescription>
+                Notice: This is a demo and does not perform real analysis. For demonstration purposes only.
+              </AlertDescription>
+            </Alert>
           </div>
         </Card>
 
